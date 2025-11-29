@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Home |LearningHub {% endblock title %}
+    
+{% load static %}
+
+  
+  {% block content %}
+    
+  
+    
+
+<div class="container-sm">
+    <div>
+        <h1 class="text-center mt-4">Welcome to Learning Hub Management Portal</h1>
+        <p class="text-center">Manage your courses, trainers, and announcements with ease.</p>
+    </div>
+
+    <!--trainers-->
+    <div class="container-fluid bg-light text-center p-5 mt-4">
+        <a href="{% url 'trainers' %}">
+           <h2>Manage Trainers</h2>
+            <img class="image-fluid w-50"  src="https://cdn.pixabay.com/photo/2016/11/22/08/53/training-1848689_1280.jpg" alt="">
+        </a>
+  
+  <p>
+    This section allows you to build and maintain your team of experts. You can add a new trainer and edit key details for 
+    existing staff, including their full name, professional biography, and years of
+     experience to ensure their profiles are always current and informative.
+</p>
+
+</div>
+<!--/trainers   -->
+
+<!--courses-->
+
+    <div class="container-fluid bg-light text-center p-5 mt-4">
+        <a href="{% url 'courses' %}">
+           <h2>Manage Courses</h2>
+            <img class="image-fluid w-50"  src="https://cdn.pixabay.com/photo/2017/02/06/12/52/meeting-2042937_1280.jpg" alt="">
+        </a>
+  
+  <p>
+    Easily build and update your educational catalog. You can add new courses and edit all essential details for existing ones,
+    including the course title, a full description, and the total duration in hours, ensuring your offerings are always accurately
+    presented.
+</p>
+</div>
+<!--/courses-->
+<!--anouncements-->
+
+    <div class="container-fluid bg-light text-center p-5 pb-20 mt-4 mb-4">
+        <a href="{% url 'announcements' %}">
+           <h2>Manage Anouncements</h2>
+            <img class="image-fluid w-50"  src="https://cdn.pixabay.com/photo/2025/06/19/03/22/megaphone-9668025_1280.png" alt="">
+        </a>
+  
+  <p>
+    This hub allows you to broadcast important information effectively. You can create and publish new announcements, as well
+     as view all existing posts to track current communications and ensure members are always up-to-date with the latest news and updates.
+</p>
+</div>
+<!--/anouncements-->
+</div>
+{% endblock content %}
+

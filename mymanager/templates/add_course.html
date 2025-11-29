@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Announcements |LearningHub {% endblock title %}
+    
+{% load static %}
+
+  
+{% block content %}
+
+
+<div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-tertiary text-black">
+                    <h5 class="mb-0 ">Add New Product</h5>
+                </div>
+
+                <div class="card-body">
+
+
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label class="form-label">Title</label>
+                            <input type="text" name="title" class="form-control" placeholder="Enter trainer's name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <input type="text" name="description" class="form-control" placeholder="Enter trainer's biography" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Duration</label>
+                            <input type="number" name="duration" class="form-control" placeholder="Enter trianer's years of Experience" required>
+                        </div>
+                                        
+
+                      
+                        <div class="d-flex justify-content-between">
+                            <a href="{% url 'trainers' %}" class="btn bg-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Add course</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+{% endblock content %}  

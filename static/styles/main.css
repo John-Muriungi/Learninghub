@@ -1,0 +1,27 @@
+.top-link {
+
+    max-width: 120px;
+    Max-height: 120px;
+    background-color: white;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: block;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px !important;
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+
+}

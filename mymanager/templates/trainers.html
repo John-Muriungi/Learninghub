@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Trainers |LearningHub {% endblock title %}
+    
+{% load static %}
+
+  
+  {% block content %}
+
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 content">
+            <h2>All Trainers</h2>
+            <p>All Trainers present in the institution are listed below</p>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    Trainers List
+                    <a href="{% url 'add_trainer'%}" class="btn btn-primary btn-sm float-end">+ Add New Trainer</a>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="table-primary w-100">
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Bio</th>
+                                <th>Years of Experience</th>
+                                <th>Actions</th>                          
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                        {% for trainer in trainers %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ trainer.name }}</td>
+                                <td>{{ trainer.bio }}</td>
+                                <td>{{ trainer.experience }}</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="{% url 'delete_trainer' trainer.id %}" class="btn btn-sm btn-danger" 
+                                    onclick="return confirm('Are you sure you want to delete {{ trainer.name }}?')">Delete</a>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="5" class="text-center">No trainers available.</td>
+                            </tr>
+                        {% endfor %}
+    
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+{% endblock content %}

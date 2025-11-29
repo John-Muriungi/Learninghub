@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Announcements |LearningHub {% endblock title %}
+    
+{% load static %}
+
+  
+  {% block content %}
+
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 content">
+            <h2>All Announcements</h2>
+            <p>All posted  Announcements </p>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    Announcements List
+                    <a href="{% url 'add_announcement' %}" class="btn btn-primary btn-sm float-end">+ Add New Announcements</a>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="table-primary w-100">
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Message</th>
+                                <th>Date</th>
+                                <th>Actions</th>     
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for announcement in announcements %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ announcement.title }}</td>
+                                <td>{{ announcement.message }}</td>
+                                <td>Posted on: {{ announcement.date_posted|date:"F j, Y, g:i a" }}</td>
+                                   <td>
+                                    <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="{% url 'delete_announcement' announcement.id %}" class="btn btn-sm btn-danger" 
+                                    onclick="return confirm('Are you sure you want to delete {{ announcement.title }}?')">Delete</a>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>            
+                                <td colspan="5" class="text-center">No announcements available.</td>
+                            </tr>
+                            {% endfor %}
+                        
+    
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+{% endblock content %}
